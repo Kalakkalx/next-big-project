@@ -1,80 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Next Big Project — a fresh space to build something great.">
-  <title>Next Big Project</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="Next Big Project home">NBP<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a class="nav-cta" href="#get-started">Get started <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="eyebrow"><span class="status-dot"></span> A new idea starts here</div>
-      <h1>Your next big thing<br><span>starts with an idea.</span></h1>
-      <p class="hero-copy">A clean starting point for whatever you're building. Make it useful, make it bold, and make it yours.</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="#get-started">Explore the project <span aria-hidden="true">→</span></a>
-        <a class="button button-secondary" href="#about">Learn more</a>
-      </div>
-      <div class="hero-footnote"><span aria-hidden="true">✳</span> Built for what comes next</div>
-    </section>
-
-    <section class="features section" id="features">
-      <div class="section-heading">
-        <p class="eyebrow">THE FOUNDATION</p>
-        <h2>Simple start. <span>Big possibilities.</span></h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⌘</div>
-          <h3>Make it yours</h3>
-          <p>Shape this starter into a product, portfolio, experiment, or something entirely new.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">↗</div>
-          <h3>Keep moving</h3>
-          <p>A lightweight foundation with separate HTML, CSS, and JavaScript files.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">✳</div>
-          <h3>Build boldly</h3>
-          <p>Start with the essentials, then add the features your idea actually needs.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <p class="eyebrow">THE IDEA</p>
-      <h2>Every great project<br>begins with <span>version one.</span></h2>
-      <p>This is your blank canvas. Replace this copy, customize the design, and turn the repository into something worth sharing.</p>
-    </section>
-
-    <section class="get-started" id="get-started">
-      <div>
-        <p class="eyebrow">YOUR MOVE</p>
-        <h2>Ready to build<br>something different?</h2>
-      </div>
-      <button class="button button-light" id="start-button" type="button">Let's go <span aria-hidden="true">→</span></button>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <a class="brand" href="#">NBP<span>.</span></a>
-    <p>Made for the next big idea.</p>
-    <p>© <span id="year"></span> Next Big Project</p>
-  </footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17172a"><title>Vice City — Main Menu Concept</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body><main class="screen"><div class="sun"></div><div class="sun-stripes"></div><div class="skyline skyline-back"></div><div class="skyline skyline-front"></div><div class="palm palm-left"><i></i></div><div class="palm palm-right"><i></i></div><div class="road"><span></span></div><div class="grain"></div>
+<header class="topbar"><a class="studio" href="#">KX <small>STUDIOS</small></a><span class="edition">THE 80s EDITION <i></i></span></header>
+<section class="layout"><div class="branding"><p class="kicker">WELCOME TO THE</p><h1 class="logo">VICE<span>CITY</span></h1><p class="tagline">SUNSHINE, SPEED &amp; SIN</p><div class="rule"></div></div>
+<nav class="menu" aria-label="Main menu"><p class="menu-heading">MAIN MENU <span>— 01</span></p>
+<button class="menu-item active" data-action="start"><b>01</b><span>Start Game</span><i>↗</i></button><button class="menu-item" data-action="load"><b>02</b><span>Load Game</span><i>↗</i></button><button class="menu-item" data-action="settings"><b>03</b><span>Settings</span><i>↗</i></button><button class="menu-item" data-action="credits"><b>04</b><span>Credits</span><i>↗</i></button><button class="menu-item" data-action="quit"><b>05</b><span>Quit Game</span><i>↗</i></button><div class="hint"><kbd>↑</kbd><kbd>↓</kbd> SELECT <span></span><kbd>ENTER</kbd> CONFIRM</div></nav></section>
+<div class="location"><i></i> OCEAN DRIVE <span>25°46' N / 80°08' W</span></div><footer class="footer"><span>KX GAME CONCEPT <b>v1.0.86</b></span><span class="system"><i></i> ALL SYSTEMS NOMINAL</span><span>© 1986–2026 <b>KX STUDIOS</b></span></footer>
+<section class="dialog hidden" id="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="panel"><button class="close" id="close" aria-label="Close">×</button><p class="dialog-kicker">VICE CITY / SYSTEM</p><h2 id="dialog-title"></h2><div id="dialog-body"></div><div class="actions" id="actions"></div></div></section><div class="toast" id="toast" role="status" aria-live="polite"></div></main></body></html>
