@@ -1,18 +1,12 @@
-const yearElement = document.querySelector("#year");
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
-
-const startButton = document.querySelector("#start-button");
-const toast = document.querySelector("#toast");
-
-if (startButton && toast) {
-  startButton.addEventListener("click", () => {
-    toast.textContent = "Your next big idea starts now. Time to build!";
-    toast.classList.add("visible");
-
-    window.setTimeout(() => {
-      toast.classList.remove("visible");
-    }, 2800);
-  });
-}
+const items=[...document.querySelectorAll(".menu-item")],dialog=document.querySelector("#dialog"),title=document.querySelector("#dialog-title"),body=document.querySelector("#dialog-body"),actions=document.querySelector("#actions"),closeBtn=document.querySelector("#close"),toast=document.querySelector("#toast");let selected=0,timer;
+function notify(message){toast.textContent=message;toast.classList.add("visible");clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove("visible"),2600)}
+function select(index){selected=(index+items.length)%items.length;items.forEach((item,i)=>{item.classList.toggle("active",i===selected);item.setAttribute("aria-current",i===selected?"true":"false")})}
+function closeDialog(){dialog.classList.add("hidden");items[selected]?.focus()}
+function openDialog(name,content,buttons=[]){title.textContent=name;body.innerHTML=content;actions.replaceChildren();buttons.forEach(b=>{const el=document.createElement("button");el.className="dialog-button"+(b.primary?" primary":"");el.textContent=b.label;el.addEventListener("click",b.run);actions.append(el)});dialog.classList.remove("hidden");closeBtn.focus()}
+function run(action){switch(action){
+case"start":openDialog("Start New Game",'<p class="dialog-copy">Your story begins on a warm night by the ocean. This is a menu concept; gameplay is not connected yet.</p>',[{label:"Back to Menu",run:closeDialog},{label:"Let’s Ride",primary:true,run:()=>{closeDialog();notify("Game world coming soon — keep building.")}}]);break;
+case"load":openDialog("Load Game",'<p class="dialog-copy">No save files found. Start a new game to begin your first adventure.</p>',[{label:"Cancel",run:closeDialog},{label:"New Game",primary:true,run:()=>run("start")}]);break;
+case"settings":openDialog("Settings",'<label class="setting-row" for="music"><span>Music</span><input id="music" type="checkbox" checked></label><label class="setting-row" for="sfx"><span>Sound effects</span><input id="sfx" type="checkbox" checked></label><label class="setting-row" for="quality"><span>Display quality</span><select id="quality"><option>High</option><option>Balanced</option><option>Performance</option></select></label><p class="dialog-copy">These controls are visual demo settings.</p>',[{label:"Cancel",run:closeDialog},{label:"Save Settings",primary:true,run:()=>{closeDialog();notify("Settings saved for this demo session.")}}]);break;
+case"credits":openDialog("Credits",'<p class="dialog-copy">Concept, interface and code<br><strong>KX Studios</strong><br><br>An unofficial interface concept inspired by the color and atmosphere of 1980s coastal action games.</p>',[{label:"Back",primary:true,run:closeDialog}]);break;
+case"quit":openDialog("Leave the City?",'<p class="dialog-copy">There is no game process to quit in this web demo. You can close this tab whenever you like.</p>',[{label:"Stay",primary:true,run:closeDialog},{label:"Okay",run:()=>{closeDialog();notify("See you on the next run.")}}]);break}}
+items.forEach((item,i)=>{item.addEventListener("mouseenter",()=>select(i));item.addEventListener("focus",()=>select(i));item.addEventListener("click",()=>run(item.dataset.action))});closeBtn.addEventListener("click",closeDialog);dialog.addEventListener("click",e=>{if(e.target===dialog)closeDialog()});document.addEventListener("keydown",e=>{if(!dialog.classList.contains("hidden")){if(e.key==="Escape")closeDialog();return}if(e.key==="ArrowDown"){e.preventDefault();select(selected+1)}else if(e.key==="ArrowUp"){e.preventDefault();select(selected-1)}else if(e.key==="Enter"){if(document.activeElement?.classList.contains("menu-item"))run(document.activeElement.dataset.action);else{items[selected]?.focus();run(items[selected].dataset.action)}}else if(e.key==="Escape")notify("You’re already at the main menu.")});select(0);
