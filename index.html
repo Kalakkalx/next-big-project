@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Next Big Project — a fresh space to build something great.">
+  <title>Next Big Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Next Big Project home">NBP<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a class="nav-cta" href="#get-started">Get started <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="status-dot"></span> A new idea starts here</div>
+      <h1>Your next big thing<br><span>starts with an idea.</span></h1>
+      <p class="hero-copy">A clean starting point for whatever you're building. Make it useful, make it bold, and make it yours.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#get-started">Explore the project <span aria-hidden="true">→</span></a>
+        <a class="button button-secondary" href="#about">Learn more</a>
+      </div>
+      <div class="hero-footnote"><span aria-hidden="true">✳</span> Built for what comes next</div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">THE FOUNDATION</p>
+        <h2>Simple start. <span>Big possibilities.</span></h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌘</div>
+          <h3>Make it yours</h3>
+          <p>Shape this starter into a product, portfolio, experiment, or something entirely new.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">↗</div>
+          <h3>Keep moving</h3>
+          <p>A lightweight foundation with separate HTML, CSS, and JavaScript files.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✳</div>
+          <h3>Build boldly</h3>
+          <p>Start with the essentials, then add the features your idea actually needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <p class="eyebrow">THE IDEA</p>
+      <h2>Every great project<br>begins with <span>version one.</span></h2>
+      <p>This is your blank canvas. Replace this copy, customize the design, and turn the repository into something worth sharing.</p>
+    </section>
+
+    <section class="get-started" id="get-started">
+      <div>
+        <p class="eyebrow">YOUR MOVE</p>
+        <h2>Ready to build<br>something different?</h2>
+      </div>
+      <button class="button button-light" id="start-button" type="button">Let's go <span aria-hidden="true">→</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#">NBP<span>.</span></a>
+    <p>Made for the next big idea.</p>
+    <p>© <span id="year"></span> Next Big Project</p>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
